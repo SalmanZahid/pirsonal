@@ -2,9 +2,10 @@
   "name": "pirsonal-test",
   "version": "1.0.0",
   "description": "Nodejs test for Pirsonal",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,5 @@
     "angular-route": "^1.6.9",
     "body-parser": "^1.18.2",
     "express": "^4.16.3"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "nodemon": "^1.17.2"
   }
 }
