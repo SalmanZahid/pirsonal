@@ -20,7 +20,4 @@ app.get('/', (req, res, next) => {
 
 app.use('/api/composition', routes);
 
-const port = process.env.PORT || 3001;
-app.listen(port);
-
 module.exports = app;
