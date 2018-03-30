@@ -1,0 +1,36 @@
+<h2>NodeJs Developer Test</h2>
+
+<div ng-show="vm.showForm">
+  <form>
+    <div ng-if="vm.error" class="alert alert-danger">
+        <strong>Failed!</strong> Invalid JSON
+    </div>
+    <div class="form-group">
+      <label>Paste (Valid JSON)</label>
+      <textarea class="form-control" ng-model="vm.content" rows="20"></textarea>
+    </div>
+    <button type="submit" ng-click="vm.process()" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+</div>
+<div ng-hide="vm.showForm">
+    <h2>Results</h2>
+    <button ng-click="vm.exportToPDF()" class="btn btn-success btn-sm">Export To PDF</button>
+    <button ng-click="vm.newComposition()" class="btn btn-primary btn-sm">New Composition</button>
+    <div id="results">
+        <ul>
+            <li>Duration: {{ vm.result.duration.minutes }} minutes {{ vm.result.duration.seconds }} seconds</li>
+            <li>Types</li>
+              <ul>
+                <li ng-repeat="(key, value) in vm.result.result">{{key | uppercase}}: {{value.count}}
+                    <ul ng-if="value.formats">
+                        <li>Formats: </li>
+                        <ul>
+                           <li ng-repeat="(key, value) in value.formats">{{key}} : {{value}}</li>
+                        </ul>
+                     </ul>
+                </li>
+              </ul>
+          </ul>
+    </div>
+</div>
